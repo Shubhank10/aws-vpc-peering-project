@@ -1,3 +1,4 @@
+<img width="1536" height="1024" alt="vpc-peering-diagram" src="https://github.com/user-attachments/assets/6b6309a5-883d-469f-91c6-596521ba645a" />
 # AWS VPC Peering Project with Bastion Host
 
 A hands-on AWS networking project demonstrating secure, private communication between EC2 instances in two separate Virtual Private Clouds (VPCs). The architecture uses a public bastion host, private subnets, custom route tables, security groups, and VPC Peering.
