@@ -190,3 +190,51 @@ Remove or obscure account IDs, public IPs where unnecessary, and other sensitive
 ## Cost Awareness
 
 Review EC2, EBS, public IPv4, and VPC Peering data transfer charges in your AWS account. Stop or remove resources when they are no longer needed, taking care to preserve project evidence first.
+
+## Implementation & Testing Evidence
+
+The following screenshots demonstrate the successful implementation and verification of the AWS VPC Peering architecture.
+
+### 1. VPC Configuration
+![VPC Configuration](screenshots/01-vpc-configuration.png)
+
+### 2. Subnet Configuration
+![Subnet Configuration](screenshots/02-subnets.png)
+
+### 3. Route Table Overview
+![Route Tables](screenshots/03-route-tables.png)
+
+### 4. Private Route Table A
+![Private Route Table A](screenshots/04-private-rt-a-routes.png)
+
+### 5. Private Route Table B
+![Private Route Table B](screenshots/05-private-rt-b-routes.png)
+
+### 6. Active VPC Peering Connection
+![VPC Peering Active](screenshots/06-vpc-peering-active.png)
+
+### 7. EC2 Instances
+![EC2 Instances](screenshots/07-ec2-instances.png)
+
+### 8. Connectivity Test: EC2-B to EC2-C
+![EC2-B to EC2-C Ping](screenshots/08-ping-ec2-b-to-c.png)
+
+**Result:** 4 packets transmitted, 4 received, 0% packet loss.
+
+### 9. Connectivity Test: EC2-C to EC2-B
+![EC2-C to EC2-B Ping](screenshots/09-ping-ec2-c-to-b.png)
+
+**Result:** 4 packets transmitted, 4 received, 0% packet loss.
+
+### Final Verification
+
+| Test | Result |
+|---|---|
+| VPC Peering Connection | Active |
+| EC2-B to EC2-C | Successful |
+| EC2-C to EC2-B | Successful |
+| SSH ProxyJump to EC2-B | Successful |
+| SSH ProxyJump to EC2-C | Successful |
+| Bidirectional ICMP Packet Loss | 0% |
+
+**Conclusion:** Successfully implemented and verified private bidirectional communication between two AWS VPCs using VPC Peering, custom route tables, security groups, and SSH ProxyJump.
